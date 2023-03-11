@@ -34,7 +34,7 @@ const Product = () => {
     console.log(id);
   }
   return (
-    <div  className='mt-28 ml-16 mb-9'>
+    <div  className='ml-16 mb-9'>
     <h2 className='font-bold text-3xl text-orange-700'>Our Product</h2>
     <hr className='h-[6px] w-40 bg-slate-900'></hr>
     <div className=''>

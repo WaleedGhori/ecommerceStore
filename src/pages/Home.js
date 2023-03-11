@@ -14,7 +14,7 @@ const Home = () => {
     // starting div
     <div>
       {/* this is a hero section */}
-    <div className='flex min-h-screen mt-[4.5rem]'>
+    <div className='flex'>
       <div className='flex flex-col w-1/4'>
         <img className='h-2/3' src={img1} alt="img1"></img>
         <img className='h-1/3' src={img5} alt="img1"></img>

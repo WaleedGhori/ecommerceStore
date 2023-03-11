@@ -8,6 +8,7 @@ import About from './pages/About';
 import ProductDetails from './pages/ProductDetails';
 import { Provider } from 'react-redux';
 import store from './store/store'
+import CheckOut from './pages/CheckOut';
 function App() {
   return (
     <div className="">
@@ -19,6 +20,7 @@ function App() {
       <Route path='/products' element={<Product/>}></Route>
       <Route path='/about' element={<About/>}></Route>
       <Route path='/products/:id' element={<ProductDetails/>}></Route>
+      <Route path='/checkout' element={<CheckOut/>}></Route>
     </Routes>
     </BrowserRouter>
     </Provider>

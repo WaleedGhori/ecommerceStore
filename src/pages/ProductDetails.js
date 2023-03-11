@@ -65,7 +65,7 @@ const ProductDetails = () => {
             <div className="flex">
               <span className="title-font font-medium text-2xl text-orange-700">${product.price}</span>
               <button className='bg-slate-800 py-2 p-4 m-2 ml-auto text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={()=>handleAdd(product)}>Add to Cart</button>
-              <NavLink  className='bg-slate-800 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={()=>handleAdd(product)} >Buy Now</NavLink>
+              <NavLink to='/checkout' className='bg-slate-800 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={()=>handleAdd(product)} >Buy Now</NavLink>
 
             </div>
           </div>
