@@ -1,9 +1,12 @@
 import React, { useState ,useRef} from 'react'
 import { Link } from 'react-router-dom'
-import { AiOutlineShoppingCart ,AiFillCloseCircle} from 'react-icons/ai'
-import { useSelector } from 'react-redux'
+import { AiOutlineShoppingCart ,AiFillCloseCircle,AiFillMinusCircle,AiFillPlusCircle} from 'react-icons/ai'
+import { useDispatch, useSelector } from 'react-redux'
+import {increment,decrement} from '../store/counterSlice'
 const Navbar = () => {
     const selector = useSelector(state => state.cart)
+    const select = useSelector(state => state.counter.value)
+    const dispatch = useDispatch()
     const [sidebar, setSidebar] = useState(false)
     const cartref = useRef();
     const toggle = () => {
@@ -54,6 +57,20 @@ const Navbar = () => {
             <div ref={cartref} className={`sidecart w-[100%] sm:w-[40%] h-[75vh] md:h-[100vh] bg-slate-900 absolute top-0 px-8 py-10  transition-all  ${sidebar ? 'right-0' : '-right-[40rem]'} z-10`}>
             <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
             <span onClick={toggle} className="absolute text-orange-600 top-4 cursor-pointer text-2xl right-2"><AiFillCloseCircle /></span>
+            <div className='mt-6'>
+            {selector.map((product)=>(
+              <div key={product.id} className="flex items-center p-2">
+              <img className='rounded' height={60} width={80} src={product.image} alt={product.title} />
+              <h5 className='ml-4'>{product.title.substring(0,18)}...</h5>
+              <div className='m-auto flex items-center'>
+                {select === 1 ?(  <button disabled className='mx-2 text-orange-600' onClick={() => dispatch(decrement())}><AiFillMinusCircle/></button>):(<button className='mx-2 text-orange-600' onClick={() => dispatch(decrement())}><AiFillMinusCircle/></button>)
+                }
+              {select}
+              <span className='mx-2 text-orange-600'  onClick={() => dispatch(increment())}><AiFillPlusCircle/></span>
+              </div>
+              </div>
+            ))}
+            </div>
           </div>
         </div>
       </>
