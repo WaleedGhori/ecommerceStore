@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../store/cartSlice'
+import { increment } from '../store/counterSlice'
 const ProductDetails = () => {
   const { id } = useParams()
   const [product, setProduct] = useState({})
@@ -27,7 +28,7 @@ const ProductDetails = () => {
   }, [product.id])
 
   const handleAdd = (product) =>{
-    dispatch(addToCart(product))
+    dispatch(increment(product))
   }
   return (
     <section className="text-gray-600 body-font overflow-hidden">
