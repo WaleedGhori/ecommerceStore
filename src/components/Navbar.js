@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'

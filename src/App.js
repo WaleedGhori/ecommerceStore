@@ -9,6 +9,7 @@ import ProductDetails from './pages/ProductDetails';
 import { Provider } from 'react-redux';
 import store from './store/store'
 import CheckOut from './pages/CheckOut';
+import Footer from './components/Footer'
 function App() {
   return (
     <div className="">
@@ -22,6 +23,7 @@ function App() {
       <Route path='/products/:id' element={<ProductDetails/>}></Route>
       <Route path='/checkout' element={<CheckOut/>}></Route>
     </Routes>
+    <Footer/>
     </BrowserRouter>
     </Provider>
     </div>

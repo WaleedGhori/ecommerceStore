@@ -9,7 +9,8 @@ const counterSlice = createSlice({
       const exist = state.find((x) => x.id === product.id);
       if (exist) {
         return state.map((x) =>
-          x.id === product.id ? { ...x, qty: x.qty + 1 } : x
+          x.id 
+           === product.id ? { ...x, qty: x.qty + 1 } : x
         );
       } else {
         return [...state, { ...product, qty: 1 }];
@@ -17,11 +18,9 @@ const counterSlice = createSlice({
     },
     decrement: (state, action) =>{
       const product = action.payload
-      console.log("decere",product);
       // check the item is exit or not
       const exit1 = state.find((x)=>x.id === product.id)
-      if (exit1.qty ===1) {
-        console.log("under if");
+      if (exit1.qty === 1) {
         return state.filter((x)=>x.id!==exit1.id)
       }
       else{
