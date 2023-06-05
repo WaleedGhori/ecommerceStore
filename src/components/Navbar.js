@@ -55,7 +55,7 @@ const Navbar = () => {
             <button onClick={toggle} className='rounded-md bg-orange-700 text-orange-100 px-2 py-[6px] hover:bg-orange-600 flex justify-center items-center'><AiOutlineShoppingCart className='ml-1' /><span className="bg-slate-900 text-slate-100 text-xs font-medium mr-1 px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1 mb-3">{select.length}</span></button>
           </div>
         </div>
-        <div ref={cartref} className={`sidecart w-[100%] sm:w-[40%] h-[75vh] md:h-[100vh] bg-slate-900 absolute top-0 px-8 py-10  transition-all  ${sidebar ? 'right-0' : '-right-[40rem]'} z-10`}>
+        <div ref={cartref} className={`sidecart w-[100%] sm:w-[40%] h-[75vh] md:h-[100vh] bg-slate-900 absolute top-0 px-8 py-10 overflow-y-scroll  transition-all  ${sidebar ? 'right-0' : '-right-[40rem]'} z-10`}>
           <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
           <span onClick={toggle} className="absolute text-orange-600 top-4 cursor-pointer text-2xl right-2"><AiFillCloseCircle /></span>
           <div className='mt-6'>
