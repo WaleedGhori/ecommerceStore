@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { increment } from '../store/counterSlice'
+import {increment} from '../store/counterSlice'
+import { addToCart } from '../store/cartSlice'
 const Product = () => {
   const [data, setData] = useState([])
   const [products, setProducts] = useState(data)
@@ -18,7 +19,6 @@ const Product = () => {
         let json = await res.json()
         setProducts(json)
         setLoading(true)
-        console.log("data",data);
       }
       return () => {
         componentMounted = false
@@ -35,16 +35,16 @@ const Product = () => {
   }
 
 
-  const productDetails = (id) => {
-    console.log(id);
-  }
+  // const productDetails = (id) => {
+  //   console.log(id);
+  // }
   return (
     <div className='md:ml-16 mt-8 mb-9 min-h-screen'>
       <h2 className='font-bold text-3xl text-orange-700'>Our Product</h2>
       <hr className='h-[6px] w-40 bg-slate-900'></hr>
       <div className=''>
         <div className='flex flex-wrap mt-1'>
-          <button className='bg-slate-900 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={() => setProducts(products)}>All Product</button>
+          <button className='bg-slate-900 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={() => setProducts(data)}>All Product</button>
           <button className='bg-slate-900 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={() => setFilterProducts("men's clothing")}>Men`s Clothing</button>
           <button className='bg-slate-900 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={() => setFilterProducts("women's clothing")}>Women`s Clothing</button>
           <button className='bg-slate-900 py-2 p-4 m-2 text-orange-700 rounded-md font-medium text-base hover:bg-orange-600 hover:text-gray-900' onClick={() => setFilterProducts("electronics")}>Electronics</button>
